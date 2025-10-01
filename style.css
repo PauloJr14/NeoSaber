@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('fonts/BebasNeue-Regular.woff2') format('woff2'),
+       url('fonts/BebasNeue-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    background-color: #012245;
+    font-family: 'Bebas Neue', sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 25vw;
+    color: #ddf8ff;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #012245; 
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; 
+    aspect-ratio: 4 / 3;
+    background: url('NeoSaber.jpg') no-repeat center/contain;
+    opacity: 1; 
+    z-index: 1;
+}
+
+
+.hero h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 25vw;
+    color: #ddf8ff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+nav {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin: 15px;
+    width: 250px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+nav h2 {
+    color: #00ffff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+nav p {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    margin: 0;
+}
+
+nav:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    border-color: #4ddfff;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.loader {
+    border: 8px solid rgba(255, 255, 255, 0.2); 
+    border-top: 8px solid #00ffff; 
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px;
+    margin: 10px auto; 
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
