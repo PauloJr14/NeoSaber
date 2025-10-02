@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/jpg" href="NeoSaber.jpg">
+        <link rel="icon" type="image/png" href="fotos/logo.png">
         <title>NeoSaber</title>
     </head>
 
@@ -22,12 +22,55 @@
             <h1>NeoSaber</h1>
         </header>
 
+        <section class="countdown">
+            <h2>Contagem Regressiva para o IPA 2025</h2>
+            <div id="timer" class="cards-container">
+                <div class="time-box">
+                    <span id="days"></span>
+                    <small>Dias</small>
+                </div>
+                <div class="time-box">
+                    <span id="hours"></span>
+                    <small>Horas</small>
+                </div>
+                <div class="time-box">
+                    <span id="minutes"></span>
+                    <small>Minutos</small>
+                </div>
+                <div class="time-box">
+                    <span id="seconds"></span>
+                    <small>Segundos</small>
+                </div>
+            </div>
+        </section>
+
         <div class="cards-container">
             <nav>
-                <h2>Quem Somos?</h2>
+                <h2>Nossa Proposta</h2>
                 <p>Você já parou pra pensar que, na correria dos estudos, acaba deixando de lado até a história da sua própria terra? Pernambuco não é só um lugar, é parte da sua identidade, e conhecer essa riqueza é se reconhecer.</p>
                 <br>
-                <p>Por isso, NeoSaber, grupo do nível III do IPA 2025, traz uma proposta diferente: tornar o aprendizado leve, envolvente e capaz de despertar orgulho pela nossa cultura. Em breve você vai descobrir como faremos isso, mas uma coisa é certa: aprender sobre Pernambuco nunca mais será a mesma coisa.</p>
+                <p>Por isso, NeoSaber, grupo do nível III do IPA (Incentivo à Pesquisa Aplicada) 2025, traz uma proposta diferente: tornar o aprendizado leve, envolvente e capaz de despertar orgulho pela nossa cultura. Em breve você vai descobrir como faremos isso, mas uma coisa é certa: aprender sobre Pernambuco nunca mais será a mesma coisa.</p>
+            </nav>
+
+            <nav>
+                <h2>Sobre o Evento</h2>
+                <div class="event-details">
+                    <p>📅 <strong>Data:</strong> 30 e 31 de outubro de 2025</p>
+                    <p>📍 <strong>Local:</strong> Quadra da Escola de Aplicação Professor Chaves</p>
+                    <p>⏰ <strong>Horário:</strong> ???</p>
+                </div>
+            </nav>
+
+            <nav>
+                <h2>Nos acompanhe!</h2>
+                <div class="social-links">
+                    <p>📸 <strong>Instagram do NeoSaber:</strong> 
+                        <a href="https://instagram.com/neosaber.ipa/" target="_blank">@neosaber.ipa</a>
+                    </p>
+                    <p>📸 <strong>Instagram do IPA:</strong> 
+                        <a href="https://instagram.com/ipa.eapc/" target="_blank">@ipa.eapc</a>
+                    </p>
+                </div>
             </nav>
 
             <nav>
@@ -44,6 +87,34 @@
                 </div>
             </nav>
         </div>
+
+        <script>
+            const targetDate = new Date("Oct 30, 2025 08:00:00").getTime();
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+                if (distance < 0) {
+                    document.getElementById("timer").innerHTML = `
+                        <div class="started-message">
+                            ⚡ O IPA 2025 já começou! ⚡
+                        </div>
+                    `;
+                }
+            }
+
+            setInterval(updateTimer, 1000);
+        </script>
     </body>
 </html>
-
