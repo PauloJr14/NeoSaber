@@ -210,3 +210,173 @@ nav:hover {
     color: #ffffff;
     font-size: 1em;
 }
+
+/* Results section - combinando com o visual neon */
+.results-section {
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.results-section h2 {
+  color: #00ffff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+
+/* Container (reusa a lógica das cards) */
+.results-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Card base (parecido com os navs, mas com personalidade própria) */
+.result-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 2px solid rgba(0,255,255,0.12);
+  border-radius: 14px;
+  width: clamp(240px, 26vw, 360px);
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0, 170, 200, 0.06);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+/* little badge on top */
+.result-card .card-badge {
+  position: absolute;
+  top: 12px;
+  right: -36px;
+  transform: rotate(25deg);
+  background: rgba(0,255,255,0.08);
+  color: #00ffff;
+  font-weight: 700;
+  padding: 6px 44px;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 4px 14px rgba(0,255,255,0.06);
+}
+
+/* Titles and text */
+.result-card h3 {
+  color: #00ffff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25em;
+  margin: 12px 0;
+}
+
+.result-card p {
+  color: #eaf6fb;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95em;
+  line-height: 1.35;
+  margin: 6px 0;
+}
+
+/* muted / smaller text */
+.result-card .muted {
+  color: rgba(234,246,251,0.7);
+  font-size: 0.85em;
+  margin-top: 8px;
+}
+
+/* hover */
+.result-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(77,223,255,0.9);
+  box-shadow: 0 12px 30px rgba(0,140,180,0.16);
+}
+
+/* highlight card (destaque visual diferente) */
+.result-card.highlight {
+  background: linear-gradient(135deg, rgba(0,30,80,0.65), rgba(10,10,60,0.7));
+  border: 2px solid rgba(77,223,255,0.18);
+}
+
+.result-card.highlight h3 {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(77,223,255,0.12);
+}
+
+/* small responsive tweak */
+@media (max-width: 700px) {
+  .results-section h2 { font-size: 1.6em; }
+  .result-card { width: calc(100% - 40px); text-align: left; }
+  .result-card .card-badge { right: -28px; padding: 5px 34px; top: 10px; }
+}
+
+/* Produto Final */
+.product-final {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #00ffff;
+  border-radius: 15px;
+  padding: 25px 20px;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.product-final h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.9em;
+  color: #00ffff;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.product-final p {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.download-section {
+  margin: 20px 0;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #00ffff;
+  color: #101820;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.download-btn:hover {
+  background-color: #4ddfff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 255, 255, 0.3);
+}
+
+.download-section .note {
+  font-size: 0.9em;
+  color: rgba(255,255,255,0.8);
+  margin-top: 8px;
+}
+
+.app-preview {
+  margin-top: 20px;
+}
+
+.app-preview img {
+  width: 80%;
+  max-width: 320px;
+  border-radius: 14px;
+  border: 2px solid rgba(0,255,255,0.15);
+  box-shadow: 0 4px 14px rgba(0,255,255,0.1);
+  transition: transform 0.3s ease;
+}
+
+.app-preview img:hover {
+  transform: scale(1.05);
+}
